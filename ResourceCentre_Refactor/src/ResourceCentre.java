@@ -31,6 +31,67 @@ public class ResourceCentre {
 				ResourceCentre.viewAllCamcorder(camcorderList);
 				ResourceCentre.viewAllChromebook(chromebookList);
 
+<<<<<<< HEAD
+=======
+			} else if (option == 2) {
+				// Add a new item
+				ResourceCentre.setHeader("ADD");			
+				itemTypeMenu();
+				
+				int itemType = Helper.readInt("Enter option to select item type > ");
+
+				if (itemType == 1) {
+					// Add a camcorder
+					Camcorder cc = inputCamcorder();
+					ResourceCentre.addCamcorder(camcorderList, cc);
+					System.out.println("Camcorder added");
+
+				} else if (itemType == 2) {
+					// Add Chromebook
+					Chromebook cb = inputChromebook();
+					ResourceCentre.addChromebook(chromebookList, cb);
+					System.out.println("Chromebook added");
+
+				} else {
+					System.out.println("Invalid type");
+				}
+
+			} else if (option == 3) {
+				// Loan item
+				ResourceCentre.setHeader("LOAN");			
+				itemTypeMenu();
+				
+				int itemType = Helper.readInt("Enter option to select item type > ");
+
+				if (itemType == 1) {
+					// Loan camcorder
+					ResourceCentre.loanCamcorder(camcorderList);
+				} else if (itemType == 2) {
+					// Loan Chromebook
+					ResourceCentre.loanChromebook(chromebookList);
+				} else {
+					System.out.println("Invalid type");
+				}
+
+			} else if (option == 4) {
+				// Return item
+				ResourceCentre.setHeader("RETURN");				
+				itemTypeMenu();
+				
+				int itemType = Helper.readInt("Enter option to select item type > ");
+				if (itemType == 1) {
+					// Return camcorder
+					ResourceCentre.returnCamcorder(camcorderList);
+				} else if (itemType == 2) {
+					// Return Chromebook
+					ResourceCentre.returnChromebook(chromebookList);
+				} else {
+					System.out.println("Invalid type");
+				}
+
+			} else if (option == 5) {
+				System.out.println("Bye!");
+>>>>>>> branch 'master' of https://github.com/ruiienn/ResourceCentre_Refactor.git
 			} else {
 				int ITEM_TYPE_CAMCORDER = 1;
 				int ITEM_TYPE_CHROMEBOOK = 2;
@@ -105,6 +166,15 @@ public class ResourceCentre {
 
 		}
 
+	}
+
+	/**
+	 * 
+	 */
+	public static void itemTypeMenu() {
+		ResourceCentre.setHeader("ITEM TYPES");
+		System.out.println("1. Camcorder");
+		System.out.println("2. Chromebook");
 	}
 
 	public static void menu() {
