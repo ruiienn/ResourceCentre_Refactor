@@ -31,8 +31,6 @@ public class ResourceCentre {
 				ResourceCentre.viewAllCamcorder(camcorderList);
 				ResourceCentre.viewAllChromebook(chromebookList);
 
-<<<<<<< HEAD
-=======
 			} else if (option == 2) {
 				// Add a new item
 				ResourceCentre.setHeader("ADD");			
@@ -91,7 +89,6 @@ public class ResourceCentre {
 
 			} else if (option == 5) {
 				System.out.println("Bye!");
->>>>>>> branch 'master' of https://github.com/ruiienn/ResourceCentre_Refactor.git
 			} else {
 				int ITEM_TYPE_CAMCORDER = 1;
 				int ITEM_TYPE_CHROMEBOOK = 2;
@@ -309,7 +306,8 @@ public class ResourceCentre {
 		
 		for (int i = 0; i < camcorderList.size(); i++) {
 					
-			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())				
+			String assetTag = camcorderList.get(i).getAssetTag();
+			if (tag.equalsIgnoreCase(assetTag)				
 					&& camcorderList.get(i).getIsAvailable() == true) {
 				
 				camcorderList.get(i).setIsAvailable(false);
